@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #ddd;
+    color: black;
+    padding: 40px;
+}
+
+nav ul {
+    padding-inline-start: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #3c3c3c;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+nav a {
+    font-size: 1.2rem;
+    display: block;
+    color: #fff;
+    padding: 20px 0;
+    text-decoration: none;
+    width: max(8rem, 20vw);
+    text-align: center;
+}
+  
+nav a:hover {
+    color: #3c3c3c;
+    background-color: #ddd;
+    cursor: pointer;
+    font-weight: bolder;
+}
