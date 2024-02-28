@@ -9,12 +9,19 @@ window.onscroll = function() {
     }
 };
 
-var click = 0;
-document.getElementById('heart').addEventListener('click', function() {
-    click++
-    if (click % 2 == 1) {
-        document.getElementById('heart').style.fill = '#cb06fd'
+var liked = false;
+var heart = document.getElementById('heart')
+var heartSVG = document.getElementById('heart-svg')
+heart.addEventListener('mousedown', function() {
+    liked = !liked;
+    if (liked) {
+        heart.style.fill = '#cb06fd'
     } else {
-        document.getElementById('heart').style.fill = '#fff'
+        heart.style.fill = '#fff'
     }
+    heartSVG.classList.add('heart-animation')
 })
+
+heartSVG.addEventListener('animationend', function() {
+    heartSVG.classList.remove('heart-animation')
+});
