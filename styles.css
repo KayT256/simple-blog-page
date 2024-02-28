@@ -58,8 +58,9 @@ nav a:hover {
     padding: 1rem;
     margin-top: 4rem;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     background-color: #111;
     color: #eee;
     height: 80vh;
@@ -113,13 +114,102 @@ p {
     gap: 3rem;
     align-items: center;
     padding: 2rem;
+    position: relative;
+}
+
+@media (max-width: 632px) {
+    #about-web {
+        color: #111;
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .about-web-area {
+        width: 100%;
+        background-color: #eee;
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .like-area {
+        background-color: #e4dae5;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        align-items: center;
+        padding: 2rem;
+        position: relative;
+    }
+}
+
+.like-area h2 {
+    position: absolute;
+    top: 2rem;
+}
+
+svg {
+    width: 160px;
+    height: 90px;
 }
 
 path {
-    margin: auto;
     pointer-events: fill;
 }
 
 path:hover {
     cursor: pointer;
+}
+
+@keyframes heart-change {
+    0% {
+        width: calc(160px * 0.9);
+        height: calc(90px * 0.9)
+    }
+    50% {
+        width: calc(160px * 1.1);
+        height: calc(90px * 1.1)
+    }
+    100% {
+        width: 160px;
+        height: 90px;
+    }
+}
+
+.heart-animation {
+    animation: heart-change 0.2s linear;
+}
+
+footer {
+    color: black;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+footer a {
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+footer a:visited {
+    color: grey;
+}
+  
+footer a:hover, a:active {
+    color: blue;
+}
+
+footer p {
+    margin: 10px;
 }
