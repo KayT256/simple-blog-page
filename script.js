@@ -16,12 +16,9 @@ heart.addEventListener('mousedown', function() {
     liked = !liked;
     if (liked) {
         heart.style.fill = '#cb06fd'
+        heartSVG.setAttribute('class', 'heart-animation-liked')
     } else {
         heart.style.fill = '#fff'
+        heartSVG.setAttribute('class', 'heart-animation-unliked')
     }
-    heartSVG.classList.add('heart-animation')
 })
-
-heartSVG.addEventListener('animationend', function() {
-    heartSVG.classList.remove('heart-animation')
-});

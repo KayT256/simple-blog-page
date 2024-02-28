@@ -166,7 +166,7 @@ path:hover {
     cursor: pointer;
 }
 
-@keyframes heart-change {
+@keyframes heart-change-liked {
     0% {
         width: calc(160px * 0.9);
         height: calc(90px * 0.9)
@@ -181,8 +181,27 @@ path:hover {
     }
 }
 
-.heart-animation {
-    animation: heart-change 0.2s linear;
+@keyframes heart-change-unliked {
+    0% {
+        width: calc(160px * 0.9);
+        height: calc(90px * 0.9)
+    }
+    50% {
+        width: calc(160px * 1.1);
+        height: calc(90px * 1.1)
+    }
+    100% {
+        width: 160px;
+        height: 90px;
+    }
+}
+
+.heart-animation-liked {
+    animation: heart-change-liked 0.2s linear;
+}
+
+.heart-animation-unliked {
+    animation: heart-change-unliked 0.2s linear;
 }
 
 footer {
