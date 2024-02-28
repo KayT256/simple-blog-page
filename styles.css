@@ -10,16 +10,21 @@ body {
 h1 {
     margin: 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     background-color: #ddd;
     color: black;
     padding: 40px;
 }
 
+nav {
+    z-index: 100;
+    position: absolute; /* Move navbar out of the document flow to prevent the sudden quick movement as the navigation bar gets a new position */
+    width: 100%;
+}
+
 nav ul {
     padding-inline-start: 0;
     margin: 0;
-    height: 100%;
     background-color: #3c3c3c;
     list-style: none;
     display: flex;
@@ -31,15 +36,90 @@ nav a {
     font-size: 1.2rem;
     display: block;
     color: #fff;
-    padding: 20px 0;
+    padding: 1.4rem 0;
     text-decoration: none;
-    width: max(8rem, 20vw);
+    width: max(7rem, 20vw);
+    height: 4rem;
     text-align: center;
 }
   
 nav a:hover {
     color: #3c3c3c;
     background-color: #ddd;
-    cursor: pointer;
     font-weight: bolder;
+}
+
+#profile-img {
+    height: 50vmin;
+    min-height: 60%;
+}
+
+#about-me {
+    padding: 1rem;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: #111;
+    color: #eee;
+    height: 80vh;
+    min-height: 500px;
+}
+
+#about-me div {
+    width: 70%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#about-web {
+    color: #111;
+    height: 50vh;
+    min-height: 300px;
+}
+
+.about-web-area {
+    width: 70%;
+    background-color: #eee;
+    padding: 1rem;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.like-area {
+    background-color: #e4dae5;
+    width: 30%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    padding: 2rem;
+}
+
+path {
+    margin: auto;
+    pointer-events: fill;
+}
+
+path:hover {
+    cursor: pointer;
 }
