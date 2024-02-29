@@ -184,3 +184,8 @@ footer a:hover, a:active {
 footer p {
     margin: 10px;
 }
+
+#author {
+    text-decoration: underline;
+    font-weight: bold;
+}
