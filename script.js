@@ -1,13 +1,13 @@
-var navbar = document.getElementById('navbar');
-var sticky = navbar.offsetTop;
+// var navbar = document.getElementById('navbar');
+// var sticky = navbar.offsetTop;
 
-window.onscroll = function() {
-    if (window.scrollY >= sticky) {
-        navbar.classList.add('sticky')
-    } else {
-        navbar.classList.remove('sticky');
-    }
-};
+// window.onscroll = function() {
+//     if (window.scrollY >= sticky) {
+//         navbar.classList.add('sticky')
+//     } else {
+//         navbar.classList.remove('sticky');
+//     }
+// };
 
 var liked = false;
 var heart = document.getElementById('heart')
