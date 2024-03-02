@@ -2,13 +2,13 @@ const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
 <link rel="stylesheet" href="/components/header/header.css">
 <header>
-    <h1>KayT's Blog</h1>
+    <a href="/index.html"><h1>KayT's Blog</h1></a>
     <nav id="navbar">
         <ul>
-            <li><a href="school/index.html">School</a></li>
-            <li><a href="daily-life/index.html">Daily life</a></li>
-            <li><a href="career/index.html">Career</a></li>
-            <li><a href="question-and-answer/index.html">Q&A</a></li>
+            <li><a id="school-link" href="/school/index.html">School</a></li>
+            <li><a id="daily-life-link" href="/daily-life/index.html">Daily life</a></li>
+            <li><a id="career-link" href="/career/index.html">Career</a></li>
+            <li><a id="question-and-answer-link" href="/question-and-answer/index.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
@@ -37,6 +37,20 @@ class Header extends HTMLElement {
                 this.navbar.classList.remove('sticky');
             }
         });
+
+        const path = window.location.pathname;
+        
+        if (path.includes('/school')) {
+            shadowRoot.getElementById('school-link').setAttribute('class', 'hover')
+        } else if (path.includes('/daily-life')) {
+            shadowRoot.getElementById('daily-life-link').setAttribute('class', 'hover')
+        } else if (path.includes('/career')) {
+            shadowRoot.getElementById('career-link').setAttribute('class', 'hover')
+        } else if (path.includes('/question-and-answer')) {
+            shadowRoot.getElementById('question-and-answer-link').setAttribute('class', 'hover')
+        }
+
+        
     }
 }
 

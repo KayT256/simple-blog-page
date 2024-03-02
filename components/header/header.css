@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-size: 16px;
-    margin: 0;
-}
-
 h1 {
     margin: 0;
     text-align: center;
@@ -14,6 +9,10 @@ h1 {
     background-color: #ddd;
     color: black;
     padding: 40px;
+}
+
+a {
+    text-decoration: none;
 }
 
 nav {
@@ -41,16 +40,34 @@ nav a {
     width: max(7rem, 20vw);
     height: 4rem;
     text-align: center;
+    position: relative;
 }
-  
-nav a:hover {
-    color: #3c3c3c;
+
+nav a::after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
     background-color: #ddd;
-    font-weight: bolder;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    left: 0;
+    width: 100%;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
+}
+
+.hover {
+    color: #3c3c3c;
+    background-color: #ddd;
+    font-weight: bolder;
 }
