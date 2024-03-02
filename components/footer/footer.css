@@ -1,0 +1,33 @@
+footer {
+    color: black;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+footer a {
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+footer a:visited {
+    color: grey;
+}
+  
+footer a:hover, a:active {
+    color: blue;
+}
+
+footer p {
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+#author {
+    text-decoration: underline;
+    font-weight: bold;
+}
