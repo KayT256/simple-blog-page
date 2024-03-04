@@ -6,9 +6,96 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
     margin: 0;
+    background-color: #000;
+}
+
+main {
+    display: grid;
+    grid-template-areas: "menu content sidebar";
+    grid-template-columns: minmax(0,1fr) minmax(0,2.5fr) minmax(0,15rem);
+    gap: 2rem;
+    margin-top: 5rem;
+    color: #ddd;
 }
 
 h2 {
     font-size: 2.5rem;
     margin: 0;
+}
+
+.sidebar-container {
+    display: contents;
+    z-index: auto;
+}
+
+.menu {
+    padding: 0 1rem;
+    line-height: 3;
+    height: calc(100vh - 4rem);
+    grid-area: menu;
+}
+
+.menu h2 {
+    font-size: 2rem;
+    color: #bdbdbd;
+    line-height: normal;
+    margin: 1rem;
+}
+
+.menu h3 {
+    font-size: 1.5rem;
+    color: #bdbdbd;
+    line-height: normal;
+    margin: 1rem 0;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 2rem;
+}
+
+.menu > ul {
+    padding-inline-start: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu a {
+    color: #bbb;
+    display: block;
+    padding: 0 1rem;
+    border-left: 2px solid #ccc;
+}
+
+.focus {
+    font-weight: bolder;
+    background-color: #322944;
+    color: #ddd;
+}
+
+
+header {
+    font-size: 2.5rem;
+}
+
+.sub-head {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-left: 1rem;
+    color: #d1d1d1;
+}
+
+section {
+    height: 100vh;
+}
+
+.content {
+    grid-area: content;
+}
+
+.sidebar {
+    grid-area: sidebar;
 }
