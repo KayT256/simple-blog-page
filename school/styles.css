@@ -22,10 +22,15 @@ main {
     gap: 2rem;
     margin-top: 5rem;
     color: #ddd;
+    line-height: 1.4;
 }
 
 h2 {
     font-size: 2.5rem;
+}
+
+section:not(:first-of-type) {
+    margin-top: 4rem;
 }
 
 section h2 {
@@ -102,8 +107,38 @@ header {
     color: #d1d1d1;
 }
 
-section {
-    height: 100vh;
+.section-content {
+    margin: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.section-content h3{
+    font-weight: bolder;
+    display: inline;
+}
+
+.location {
+    font-style: normal;
+}
+
+.section-content a {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.section-content a:visited {
+    color: #ccc;
+}
+
+.section-content a:hover, .section-content a:active {
+    color: #aa95d0;
+}
+
+.section-content img {
+    width: 80%;
+    margin: 1rem auto 0;
 }
 
 .content {
@@ -112,4 +147,17 @@ section {
 
 .sidebar {
     grid-area: sidebar;
+}
+
+/* Change after college admission */
+#college div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+}
+
+#college h1 {
+    font-size: 3rem;
 }
