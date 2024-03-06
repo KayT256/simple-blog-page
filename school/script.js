@@ -26,7 +26,6 @@ window.addEventListener('scroll', () => {
     let minOffsetSectionId = sections[0].getAttribute('id')
 
     for (let i = 0; i < sections.length; i++) {
-        console.log(sectionsOffset[i])
         if (Math.abs(sectionsOffset[i]) < Math.abs(minOffsetValue)) {
             minOffsetValue = sectionsOffset[i]
             minOffsetSection = sections[i]
