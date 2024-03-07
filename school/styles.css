@@ -18,7 +18,7 @@ body {
 main {
     display: grid;
     grid-template-areas: "menu content sidebar";
-    grid-template-columns: minmax(0,1fr) minmax(0,2.5fr) minmax(0,15rem);
+    grid-template-columns: minmax(0,1fr) minmax(0,2.5fr) minmax(0,20rem);
     gap: 2rem;
     margin-top: 5rem;
     color: #ddd;
@@ -43,14 +43,33 @@ section h2 {
     z-index: auto;
 }
 
+.menu, .sidebar {
+    padding: 0 1rem;
+    line-height: 3;
+    max-height: 80vh;
+    position: sticky;
+    top: 4rem;
+    grid-area: menu;
+    overflow-y: auto;
+}
+
 @media (max-width: 1200px) {
     .sidebar-container {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         position: sticky;
-        max-height: 80vh;
+        max-height: 100vh;
         top: 4rem;
+        overflow-y: auto;
+        padding-bottom: 25vh;
+    }
+
+    .menu, .sidebar {
+        position: relative;
+        max-height: unset;
+        overflow-y: unset;
+        top: unset;
     }
 
     main {
@@ -68,16 +87,6 @@ section h2 {
         display: block;
         margin-left: 1rem;
     }
-}
-
-.menu, .sidebar {
-    padding: 0 1rem;
-    line-height: 3;
-    max-height: 80vh;
-    position: sticky;
-    top: 4rem;
-    grid-area: menu;
-    overflow-y: auto;
 }
 
 .sidebar-container h2 {
