@@ -5,8 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blog Page</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="/components/header/header.js"></script>
-        <script src="/components/footer/footer.js"></script>
+        <link rel="stylesheet" href="components/scroll-bar/scroll-bar.css">
+        <!-- 
+            Absolute path like this doesn't work because it cause the 404 error on GitHub Pages.
+            
+            <script src="/components/header/header.js"></script>
+            <script src="/components/footer/footer.js"></script>
+
+            An absolute path starts from the root of the domain, whereas a relative path starts from the current directory. 
+            For example, if the project is hosted at https://username.github.io/projectname/, 
+            an absolute path like /components/header/header.js would incorrectly point to https://username.github.io/components/header/header.js 
+            instead of https://username.github.io/projectname/components/header/header.js
+        -->
+        <script src="components/header/header.js"></script>
+        <script src="components/footer/footer.js"></script>
     </head>
     <body>
         <header-component></header-component>
