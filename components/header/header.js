@@ -1,14 +1,14 @@
 const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
-<link rel="stylesheet" href="/components/header/header.css">
+<link rel="stylesheet" href="path">
 <header>
-    <a href="/index.html"><h1>KayT's Blog</h1></a>
+    <a id="home-link" href="root/index.html"><h1>KayT's Blog</h1></a>
     <nav id="navbar">
         <ul>
-            <li><a id="school-link" href="/school/index.html">School</a></li>
-            <li><a id="daily-life-link" href="/daily-life/index.html">Daily life</a></li>
-            <li><a id="career-link" href="/career/index.html">Career</a></li>
-            <li><a id="question-and-answer-link" href="/question-and-answer/index.html">Q&A</a></li>
+            <li><a id="school-link" href="root/school/index.html">School</a></li>
+            <li><a id="daily-life-link" href="root/daily-life/index.html">Daily life</a></li>
+            <li><a id="career-link" href="root/career/index.html">Career</a></li>
+            <li><a id="question-and-answer-link" href="root/question-and-answer/index.html">Q&A</a></li>
         </ul>
     </nav>
 </header>
@@ -39,15 +39,60 @@ class Header extends HTMLElement {
         });
 
         const path = window.location.pathname;
+
+        const stylesheet = shadowRoot.querySelector('link[href="path"]')
+        const title = document.title
+
+        const homeLink = shadowRoot.getElementById('home-link')
+        const schoolLink = shadowRoot.getElementById('school-link')
+        const dailyLifeLink = shadowRoot.getElementById('daily-life-link')
+        const careerLink = shadowRoot.getElementById('career-link')
+        const qaLink = shadowRoot.getElementById('question-and-answer-link')
+
+        function resetLink() {
+            homeLink.setAttribute('href', 'root/index.html')
+            schoolLink.setAttribute('href', 'root/school/index.html')
+            dailyLifeLink.setAttribute('href', 'root/daily-life/index.html')
+            careerLink.setAttribute('href', 'root/career/index.html')
+            qaLink.setAttribute('href', 'root/question-and-answer/index.html')
+        }
+
+        resetLink()
+
+        if (title == 'Blog Page') {
+            stylesheet.setAttribute('href', 'components/header/header.css')
+            shadowRoot.querySelectorAll('a').forEach(a => {
+
+            // 1. `a.href`:
+            //    - **Type**: Property of the `<a>` element object.
+            //    - **Returns**: The absolute URL. If the `href` attribute contains a relative URL, `a.href` will return the full URL including the protocol, domain, and path. 
+            // This is the resolved URL based on the current location.
+            //    - **Usage**: Generally used when need the fully resolved URL or when manipulating the element's destination.
+
+            // 2. `a.getAttribute('href')`:
+            //    - **Type**: Method that can be used on any HTML element to retrieve the value of a specified attribute.
+            //    - **Returns**: The exact value of the attribute as it appears in the HTML. If the `href` attribute contains a relative URL, 
+            // `a.getAttribute('href')` will return that relative URL without resolving it to a full URL.
+            //    - **Usage**: Useful when need the exact value of the `href` attribute for processing or when the distinction between absolute and relative URLs is important for your application logic.
+
+                a.setAttribute('href', a.getAttribute('href').replace('root/', ''))
+            })
+        } else {
+            stylesheet.href = '../components/header/header.css'
+            shadowRoot.querySelectorAll('a').forEach(a => {
+                a.setAttribute('href', a.getAttribute('href').replace('root/', '../'))
+            })
+        }
+
         
         if (path.includes('/school')) {
-            shadowRoot.getElementById('school-link').setAttribute('class', 'hover')
+            schoolLink.setAttribute('class', 'hover')
         } else if (path.includes('/daily-life')) {
-            shadowRoot.getElementById('daily-life-link').setAttribute('class', 'hover')
+            dailyLifeLink.setAttribute('class', 'hover')
         } else if (path.includes('/career')) {
-            shadowRoot.getElementById('career-link').setAttribute('class', 'hover')
+            careerLink.setAttribute('class', 'hover')
         } else if (path.includes('/question-and-answer')) {
-            shadowRoot.getElementById('question-and-answer-link').setAttribute('class', 'hover')
+            qaLink.setAttribute('class', 'hover')
         }
 
         
