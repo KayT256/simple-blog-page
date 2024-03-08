@@ -8,7 +8,15 @@ body {
     margin: 0;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin: 0;
+/* Update soon */
+main {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 4rem;
+    font-weight: bold;
 }
