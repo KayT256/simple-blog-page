@@ -2,13 +2,13 @@ const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
 <link rel="stylesheet" href="path">
 <header>
-    <a id="home-link" href="root/index.html"><h1>KayT's Blog</h1></a>
+    <a id="home-link" href="root/"><h1>KayT's Blog</h1></a>
     <nav id="navbar">
         <ul>
-            <li><a id="school-link" href="root/school/index.html">School</a></li>
-            <li><a id="daily-life-link" href="root/daily-life/index.html">Daily life</a></li>
-            <li><a id="career-link" href="root/career/index.html">Career</a></li>
-            <li><a id="question-and-answer-link" href="root/question-and-answer/index.html">Q&A</a></li>
+            <li><a id="school-link" href="root/school/">School</a></li>
+            <li><a id="daily-life-link" href="root/daily-life/">Daily life</a></li>
+            <li><a id="career-link" href="root/career/">Career</a></li>
+            <li><a id="question-and-answer-link" href="root/question-and-answer/">Q&A</a></li>
         </ul>
     </nav>
 </header>
@@ -50,11 +50,11 @@ class Header extends HTMLElement {
         const qaLink = shadowRoot.getElementById('question-and-answer-link')
 
         function resetLink() {
-            homeLink.setAttribute('href', 'root/index.html')
-            schoolLink.setAttribute('href', 'root/school/index.html')
-            dailyLifeLink.setAttribute('href', 'root/daily-life/index.html')
-            careerLink.setAttribute('href', 'root/career/index.html')
-            qaLink.setAttribute('href', 'root/question-and-answer/index.html')
+            homeLink.setAttribute('href', 'root/')
+            schoolLink.setAttribute('href', 'root/school/')
+            dailyLifeLink.setAttribute('href', 'root/daily-life/')
+            careerLink.setAttribute('href', 'root/career/')
+            qaLink.setAttribute('href', 'root/question-and-answer/')
         }
 
         resetLink()
