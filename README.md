@@ -1,6 +1,6 @@
 # Simple Blog website
 
-A simple personal blog website
+A simple personal blog website (This website will be continuously updating)
 
 Visit the page: [Blog Page](https://kayt256.github.io/simple-blog-page/)
 
