@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
     margin: 0;
 }
 
@@ -22,7 +25,7 @@ body {
     flex-wrap: wrap;
     background-color: #111;
     color: #eee;
-    height: 80vh;
+    height: fit-content;
     min-height: 500px;
 }
 
@@ -70,7 +73,7 @@ p {
     position: relative;
 }
 
-@media (max-width: 632px) {
+@media (max-width: 800px) {
     #about-web {
         color: #111;
         height: 50vh;
@@ -155,4 +158,10 @@ path:hover {
 
 .heart-animation-unliked {
     animation: heart-change-unliked 0.2s linear;
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 13px;
+    }
 }

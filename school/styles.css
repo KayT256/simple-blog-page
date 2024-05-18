@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
@@ -196,4 +200,10 @@ header {
 
 #college h1 {
     font-size: 3rem;
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 13px;
+    }
 }
