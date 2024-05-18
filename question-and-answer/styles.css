@@ -2,21 +2,114 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
+    background-color: #d6bee4;
     margin: 0;
 }
 
-/* Update soon */
 main {
-    height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin-top: 5rem;
+    min-height: 80vh;
 }
 
 p {
-    font-size: 4rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 2rem;
+}
+  
+#form-body {
+    border-radius: 0.25rem;
+    background-color: #e4d1ef;
+    border: 2px solid #9071a3;
+    width: 70vw;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 1rem 1rem 0 1rem;
+}
+  
+#survey-form {
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+  
+#personal-information {
+    border-bottom: 3px solid #53536f;
+}
+  
+legend {
+    padding-top: 1rem;
+    text-align: center;
+}
+  
+fieldset {
+    border: none;
+    padding: 2rem 0;
+}
+
+label {
+    display: block;
+    margin: 0.5rem;
+}
+  
+input, textarea {
+    padding: 0 5px 0 5px;
+    margin: 10px 0 0 0;
+    width: 60%;
+    min-height: 2em;
+    color: #f5f6f7;
+    border: none;
+    border-bottom: 2px solid #a851b5;
+    background-color: #ca7ad6;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #ddd;
+}
+  
+input:focus, textarea:focus {
+    background-color: #cb96d3; 
+    border-color: #783a82;
+    outline: none;
+}
+  
+textarea {
+    padding: 5px;
+    width: 80%;
+}
+
+button {
+    display: block;
+    border-radius: 9999px;
+    border: 1px solid #9071a3;
+    width: 100px;
+    margin: 2rem auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #9071a348;
+    color: #f5f6f7;
+    min-width: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
 }

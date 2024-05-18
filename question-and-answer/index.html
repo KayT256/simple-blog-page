@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Q&A</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="../components/scroll-bar/scroll-bar.css">
-        <!-- 
-            <script src="/components/header/header.js"></script>
-            <script src="/components/footer/footer.js"></script>
-            <script src="/components/scroll-bar/scroll-bar.js"></script> 
-        -->
-        <script src="../components/header/header.js"></script>
-        <script src="../components/footer/footer.js"></script>
-        <script src="../components/scroll-bar/scroll-bar.js"></script> 
-    </head>
-    <body>
-        <header-component></header-component>
-        <main>
-            <!-- Update soon -->
-            <p>Coming soon...</p>
-        </main>
-        <footer-component></footer-component>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../components/scroll-bar/scroll-bar.css">
+    <!-- 
+        <script src="/components/header/header.js"></script>
+        <script src="/components/footer/footer.js"></script>
+        <script src="/components/scroll-bar/scroll-bar.js"></script> 
+    -->
+    <script src="../components/header/header.js"></script>
+    <script src="../components/footer/footer.js"></script>
+    <script src="../components/scroll-bar/scroll-bar.js"></script> 
+</head>
+<body>
+    <header-component></header-component>
+    <main>
+        <form id="survey-form">
+            <div id="form-body">
+                <fieldset id="personal-information">
+                    <legend>Personal Information</legend>
+                    <label id="name-label" for="name">Name: <input id="name" name="name" type="text" placeholder="Your name" required></label>
+                    <label id="email-label" for="email">Email: <input id="email" name="email" type="email" placeholder="youremail@email.com" required></label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Questions</legend>
+                    <label id="others" for="other-details">Ask me any question and I will reply to your email<textarea id="other-details" name="other-details" rows=3 cols=30 placeholder="How did you started..." required></textarea></label>
+                </fieldset>
+            </div>
+            <button id="submit" type="submit">Submit</button>
+            <button id="reset" type="reset">Reset</button>
+        </form>
+    </main>
+    <footer-component></footer-component>
+    <script src="script.js"></script>
+</body>
 </html>
