@@ -6,17 +6,154 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 16px;
     margin: 0;
+    background-color: #000;
+    color: #ddd;
 }
 
-/* Update soon */
 main {
-    height: 80vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    min-height: 80vh;
+}
+
+hr {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+    height: 50%;
+}
+
+section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
-p {
-    font-size: 4rem;
-    font-weight: bold;
+.description {
+    width: calc(100% - 600px);
+    min-width: 400px;
+    padding: 1rem;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 40%;
+    aspect-ratio: 4/3;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+button {
+    padding: 10px;
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    background-color: transparent;
+    color: #eee;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #18185383;
+    transition: all 0.3s ease-in-out;
+}
+
+.back {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+button:hover {
+    background-color: #181853;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+.maximize-button {
+    display: block;
+    margin: 1rem auto;
+    width: 4rem;
+    filter: invert(1);
+}
+
+.maximize-button:hover {
+    cursor: pointer;
+}
+
+.maximize {
+    height: auto;
+    opacity: 1;
+}
+
+.up {
+    transform: rotate(180deg);
+}
+
+#food .image-wrapper {
+    height: 80%;
+}
+
+@media (max-width: 1000px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .maximize {
+        height: fit-content;
+        opacity: 1;
+    }
+
+    .image-wrapper {
+        position: relative;
+        width: 80%;
+        aspect-ratio: 4/3;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .description {
+        width: 80%;
+    }
 }
