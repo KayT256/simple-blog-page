@@ -113,3 +113,9 @@ button {
 button:hover {
     transform: scale(1.05);
 }
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 13px;
+    }
+}
