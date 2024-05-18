@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daily Life</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="../components/scroll-bar/scroll-bar.css">
-        <!-- 
-            <script src="/components/header/header.js"></script>
-            <script src="/components/footer/footer.js"></script>
-            <script src="/components/scroll-bar/scroll-bar.js"></script> 
-        -->
-        <script src="../components/header/header.js"></script>
-        <script src="../components/footer/footer.js"></script>
-        <script src="../components/scroll-bar/scroll-bar.js"></script> 
-    </head>
-    <body>
-        <header-component></header-component>
-        <main>
-            <!-- Update soon -->
-            <p>Coming soon...</p>
-        </main>
-        <footer-component></footer-component>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Life</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../components/scroll-bar/scroll-bar.css">
+    <!-- 
+        <script src="/components/header/header.js"></script>
+        <script src="/components/footer/footer.js"></script>
+        <script src="/components/scroll-bar/scroll-bar.js"></script> 
+    -->
+    <script src="../components/header/header.js"></script>
+    <script src="../components/footer/footer.js"></script>
+    <script src="../components/scroll-bar/scroll-bar.js"></script> 
+</head>
+<body>
+    <header-component></header-component>
+    <main>
+        <article id="hobbies">
+            <h2>Hobbies</h2>
+            <div class="content-wrapper">
+                <section id="swimming">
+                    <div class="description">
+                        <h3>Swimming</h3>
+                        <p>I have been a Semi-Professional swimmer for 9 years and achieved many awards from city to national level.</p>
+                    </div>
+                    <div class="image-wrapper">
+                        <img id="swimming-image" src="./img/swimming/swimming0.JPG" alt="swimming photos">
+                        <button class="back">&larr;</button>
+                        <button class="next">&rarr;</button>
+                    </div>
+                </section>
+                <section id="coding">
+                    <div class="description">
+                        <h3>Coding</h3>
+                        <p>I have a passion for web development and data science and have worked on various projects related to these fields.</p>
+                    </div>
+                    <div class="image-wrapper">
+                        <img id="coding-image" src="./img/coding/coding0.png" alt="top projects images">
+                        <button class="back">&larr;</button>
+                        <button class="next">&rarr;</button>
+                    </div>
+                </section>
+            </div>
+            <img class="maximize-button" src="./img/down-arrow.png" alt="button to maximize and minimize">
+        </article>
+        <hr>
+        <article id="food">
+            <img class="maximize-button up" src="./img/down-arrow.png" alt="button to maximize and minimize">
+            <div class="content-wrapper">
+                <div class="image-wrapper">
+                    <img id="food-image" src="./img/food/food0.png" alt="favorite food image">
+                    <button class="back">&larr;</button>
+                    <button class="next">&rarr;</button>
+                </div>
+            </div>
+            <h2>Favorite food</h2>
+        </article>
+    </main>
+    <footer-component></footer-component>
+    <script src="script.js"></script>
+</body>
 </html>
