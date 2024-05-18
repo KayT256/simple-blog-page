@@ -5,9 +5,9 @@ headerTemplate.innerHTML = `
     <a id="home-link" href="root/"><h1>KayT's Blog</h1></a>
     <nav id="navbar">
         <ul>
+            <li><a id="home-link-nav" href="root/">Home</a></li>
             <li><a id="school-link" href="root/school/">School</a></li>
             <li><a id="daily-life-link" href="root/daily-life/">Daily life</a></li>
-            <li><a id="career-link" href="root/career/">Career</a></li>
             <li><a id="question-and-answer-link" href="root/question-and-answer/">Q&A</a></li>
         </ul>
     </nav>
@@ -44,16 +44,15 @@ class Header extends HTMLElement {
         const title = document.title
 
         const homeLink = shadowRoot.getElementById('home-link')
+        const homeLinkNav = shadowRoot.getElementById('home-link-nav')
         const schoolLink = shadowRoot.getElementById('school-link')
         const dailyLifeLink = shadowRoot.getElementById('daily-life-link')
-        const careerLink = shadowRoot.getElementById('career-link')
         const qaLink = shadowRoot.getElementById('question-and-answer-link')
 
         function resetLink() {
             homeLink.setAttribute('href', 'root/')
             schoolLink.setAttribute('href', 'root/school/')
             dailyLifeLink.setAttribute('href', 'root/daily-life/')
-            careerLink.setAttribute('href', 'root/career/')
             qaLink.setAttribute('href', 'root/question-and-answer/')
         }
 
@@ -89,10 +88,10 @@ class Header extends HTMLElement {
             schoolLink.setAttribute('class', 'hover')
         } else if (path.includes('/daily-life')) {
             dailyLifeLink.setAttribute('class', 'hover')
-        } else if (path.includes('/career')) {
-            careerLink.setAttribute('class', 'hover')
         } else if (path.includes('/question-and-answer')) {
             qaLink.setAttribute('class', 'hover')
+        } else {
+            homeLinkNav.setAttribute('class', 'hover')
         }
 
         
